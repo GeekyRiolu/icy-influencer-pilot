@@ -79,12 +79,14 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-ice': 'var(--gradient-ice)',
 				'gradient-card': 'var(--gradient-card)'
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
-				'glow': 'var(--shadow-glow)'
+				'glow': 'var(--shadow-glow)',
+				'purple': 'var(--shadow-purple)'
 			},
 			keyframes: {
 				'accordion-down': {
