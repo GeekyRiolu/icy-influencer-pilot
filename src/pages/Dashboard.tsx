@@ -63,20 +63,20 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-ice">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 ICY
               </div>
-              <Badge variant="outline" className="text-xs">
+              <Badge variant="outline" className="text-xs border-border">
                 AI Influencer Outreach
               </Badge>
             </div>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" className="border-border hover:bg-muted/50">
               <Settings className="h-4 w-4 mr-2" />
               Settings
             </Button>
@@ -95,19 +95,19 @@ export default function Dashboard() {
           </div>
 
           {/* Brand Summary Card */}
-          <Card className="bg-gradient-card shadow-soft mb-8">
+          <Card className="bg-card border-border shadow-soft mb-8">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-foreground">
                     <Target className="h-5 w-5 text-primary" />
                     {brandData.productName}
                   </CardTitle>
-                  <CardDescription className="mt-2">
+                  <CardDescription className="mt-2 text-muted-foreground">
                     {brandData.productDescription}
                   </CardDescription>
                 </div>
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" className="border-border hover:bg-muted/50">
                   Edit Setup
                 </Button>
               </div>
@@ -155,17 +155,17 @@ export default function Dashboard() {
           </Card>
 
           {/* Main Action */}
-          <Card className="bg-gradient-primary text-primary-foreground shadow-glow mb-8">
+          <Card className="bg-gradient-primary text-white shadow-purple mb-8 border-0">
             <CardContent className="p-8 text-center">
               <Sparkles className="h-16 w-16 mx-auto mb-4 animate-pulse-glow" />
               <h2 className="text-2xl font-bold mb-2">Ready to Find Influencers?</h2>
               <p className="mb-6 opacity-90">
                 Our AI will analyze thousands of influencers to find perfect matches for your brand
               </p>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="secondary"
-                className="bg-white text-primary hover:bg-white/90"
+                className="bg-white text-primary hover:bg-white/90 border-0"
                 onClick={handleStartDiscovery}
               >
                 <Search className="h-5 w-5 mr-2" />
@@ -176,36 +176,36 @@ export default function Dashboard() {
 
           {/* Stats Overview */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <Card className="bg-gradient-card shadow-soft">
+            <Card className="bg-card border-border shadow-soft">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-muted-foreground">Total Campaigns</p>
-                    <p className="text-2xl font-bold">0</p>
+                    <p className="text-2xl font-bold text-foreground">0</p>
                   </div>
                   <BarChart3 className="h-8 w-8 text-primary" />
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-card shadow-soft">
+            <Card className="bg-card border-border shadow-soft">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-muted-foreground">Influencers Found</p>
-                    <p className="text-2xl font-bold">0</p>
+                    <p className="text-2xl font-bold text-foreground">0</p>
                   </div>
                   <Users className="h-8 w-8 text-primary" />
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-card shadow-soft">
+            <Card className="bg-card border-border shadow-soft">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-muted-foreground">Messages Sent</p>
-                    <p className="text-2xl font-bold">0</p>
+                    <p className="text-2xl font-bold text-foreground">0</p>
                   </div>
                   <MessageSquare className="h-8 w-8 text-primary" />
                 </div>
@@ -215,35 +215,35 @@ export default function Dashboard() {
 
           {/* Quick Actions */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="bg-gradient-card shadow-soft">
+            <Card className="bg-card border-border shadow-soft">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 text-foreground">
                   <Search className="h-5 w-5 text-primary" />
                   Discover Influencers
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-muted-foreground">
                   Find influencers that match your brand and audience
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full" onClick={handleStartDiscovery}>
+                <Button className="w-full bg-gradient-primary border-0" onClick={handleStartDiscovery}>
                   Start Discovery
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-card shadow-soft">
+            <Card className="bg-card border-border shadow-soft">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 text-foreground">
                   <TrendingUp className="h-5 w-5 text-primary" />
                   Campaign Analytics
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-muted-foreground">
                   Track your campaign performance and ROI
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full" disabled>
+                <Button variant="outline" className="w-full border-border hover:bg-muted/50" disabled>
                   View Analytics
                 </Button>
               </CardContent>

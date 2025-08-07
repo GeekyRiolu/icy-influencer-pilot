@@ -259,15 +259,15 @@ export function BrandSetupForm({ onComplete }: BrandSetupFormProps) {
                   <FormLabel>Brand Tone *</FormLabel>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {brandTones.map((tone) => (
-                      <Card 
+                      <Card
                         key={tone.value}
-                        className={`cursor-pointer transition-all hover:shadow-soft ${
-                          field.value === tone.value ? 'ring-2 ring-primary bg-accent' : ''
+                        className={`cursor-pointer transition-all hover:shadow-soft bg-card border-border ${
+                          field.value === tone.value ? 'ring-2 ring-primary bg-primary/10' : ''
                         }`}
                         onClick={() => field.onChange(tone.value)}
                       >
                         <CardContent className="p-4">
-                          <h4 className="font-medium">{tone.label}</h4>
+                          <h4 className="font-medium text-foreground">{tone.label}</h4>
                           <p className="text-sm text-muted-foreground">{tone.description}</p>
                         </CardContent>
                       </Card>
@@ -288,16 +288,16 @@ export function BrandSetupForm({ onComplete }: BrandSetupFormProps) {
                     {campaignGoals.map((goal) => {
                       const Icon = goal.icon;
                       return (
-                        <Card 
+                        <Card
                           key={goal.value}
-                          className={`cursor-pointer transition-all hover:shadow-soft ${
-                            field.value === goal.value ? 'ring-2 ring-primary bg-accent' : ''
+                          className={`cursor-pointer transition-all hover:shadow-soft bg-card border-border ${
+                            field.value === goal.value ? 'ring-2 ring-primary bg-primary/10' : ''
                           }`}
                           onClick={() => field.onChange(goal.value)}
                         >
                           <CardContent className="p-4 flex items-center space-x-3">
                             <Icon className="h-5 w-5 text-primary" />
-                            <span className="font-medium">{goal.label}</span>
+                            <span className="font-medium text-foreground">{goal.label}</span>
                           </CardContent>
                         </Card>
                       );
@@ -357,15 +357,15 @@ export function BrandSetupForm({ onComplete }: BrandSetupFormProps) {
                   <FormLabel>Influencer Tier *</FormLabel>
                   <div className="space-y-3">
                     {budgetLevels.map((level) => (
-                      <Card 
+                      <Card
                         key={level.value}
-                        className={`cursor-pointer transition-all hover:shadow-soft ${
-                          field.value === level.value ? 'ring-2 ring-primary bg-accent' : ''
+                        className={`cursor-pointer transition-all hover:shadow-soft bg-card border-border ${
+                          field.value === level.value ? 'ring-2 ring-primary bg-primary/10' : ''
                         }`}
                         onClick={() => field.onChange(level.value)}
                       >
                         <CardContent className="p-4">
-                          <h4 className="font-medium">{level.label}</h4>
+                          <h4 className="font-medium text-foreground">{level.label}</h4>
                           <p className="text-sm text-muted-foreground">{level.description}</p>
                         </CardContent>
                       </Card>
@@ -431,10 +431,10 @@ export function BrandSetupForm({ onComplete }: BrandSetupFormProps) {
       {/* Form */}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <Card className="bg-gradient-card shadow-soft">
+          <Card className="bg-card border-border shadow-soft">
             <CardHeader>
-              <CardTitle>{steps[currentStep - 1].title}</CardTitle>
-              <CardDescription>{steps[currentStep - 1].description}</CardDescription>
+              <CardTitle className="text-foreground">{steps[currentStep - 1].title}</CardTitle>
+              <CardDescription className="text-muted-foreground">{steps[currentStep - 1].description}</CardDescription>
             </CardHeader>
             <CardContent>
               {renderStep()}
@@ -448,18 +448,19 @@ export function BrandSetupForm({ onComplete }: BrandSetupFormProps) {
               variant="outline"
               onClick={prevStep}
               disabled={currentStep === 1}
+              className="border-border hover:bg-muted/50"
             >
               <ChevronLeft className="h-4 w-4 mr-2" />
               Previous
             </Button>
 
             {currentStep === steps.length ? (
-              <Button type="submit" className="bg-gradient-primary hover:shadow-glow">
+              <Button type="submit" className="bg-gradient-primary hover:shadow-purple border-0">
                 Complete Setup
                 <Sparkles className="h-4 w-4 ml-2" />
               </Button>
             ) : (
-              <Button type="button" onClick={nextStep}>
+              <Button type="button" onClick={nextStep} className="bg-gradient-primary border-0">
                 Next
                 <ChevronRight className="h-4 w-4 ml-2" />
               </Button>

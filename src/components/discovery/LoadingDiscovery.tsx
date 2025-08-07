@@ -81,11 +81,11 @@ export function LoadingDiscovery() {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-ice flex items-center justify-center p-4">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="max-w-2xl w-full">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-primary rounded-full mb-6 animate-pulse-glow">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-primary rounded-full mb-6 shadow-purple">
             <Sparkles className="h-10 w-10 text-white" />
           </div>
           <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
@@ -97,7 +97,7 @@ export function LoadingDiscovery() {
         </div>
 
         {/* Progress */}
-        <Card className="bg-gradient-card shadow-soft mb-8">
+        <Card className="bg-card border-border shadow-soft mb-8">
           <CardContent className="p-8">
             <div className="mb-6">
               <div className="flex justify-between items-center mb-2">
@@ -138,11 +138,11 @@ export function LoadingDiscovery() {
               <Card 
                 key={step.id}
                 className={`transition-all duration-500 ${
-                  isCompleted 
-                    ? 'bg-success/10 border-success/20' 
-                    : isCurrent 
-                    ? 'bg-primary/10 border-primary/20 shadow-glow' 
-                    : 'bg-gradient-card'
+                  isCompleted
+                    ? 'bg-success/10 border-success/20'
+                    : isCurrent
+                    ? 'bg-primary/10 border-primary/20 shadow-purple'
+                    : 'bg-card border-border'
                 }`}
               >
                 <CardContent className="p-4">
@@ -183,12 +183,12 @@ export function LoadingDiscovery() {
         </div>
 
         {/* Fun Facts */}
-        <Card className="bg-gradient-card shadow-soft mt-8">
+        <Card className="bg-card border-border shadow-soft mt-8">
           <CardContent className="p-6 text-center">
-            <h3 className="font-semibold mb-2">💡 Did you know?</h3>
+            <h3 className="font-semibold mb-2 text-foreground">💡 Did you know?</h3>
             <p className="text-sm text-muted-foreground">
-              ICY analyzes over 50+ data points per influencer including engagement rates, 
-              audience demographics, content authenticity, and brand safety metrics to ensure 
+              ICY analyzes over 50+ data points per influencer including engagement rates,
+              audience demographics, content authenticity, and brand safety metrics to ensure
               the perfect match for your campaign.
             </p>
           </CardContent>
